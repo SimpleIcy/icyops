@@ -48,8 +48,6 @@ INSTALLED_APPS = [
     'scanhosts',
 ]
 
-SITE_ID = 1
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -145,33 +143,6 @@ STATICFILE_DIR = [
 EMAIL_HOST = "smtp.163.com"
 EMAIL_HOST_USER = "d360478265@163.com"
 EMAIL_HOST_PASSWORD = "frost3604*"
-EMAIL_SUBJECT_PREFIX = "[运维后台邮件]"
+EMAIL_SUBJECT_PREFIX = u"[运维后台]"
 
 
-#logging
-
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'formatters': {
-        'verbose': {
-            'format': '[%(levelname)1.1s %(asctime)s %(module)s:%(lineno)d] %(message)s',
-            'datefmt': '%Y%m%d %H:%M:%S',
-        },
-    },
-    'handlers': {
-        'file': {
-            'level': 'info',
-            'class': 'logging.FileHandler',
-            'formatter': 'verbose',
-            'filename': '%s/error.log' % BASE_DIR,
-        },
-    },
-    'loggers': {
-        'django': {
-            'handlers': '[file]',
-            'level': 'info',
-            'propagate': True,
-        },
-    },
-}
